@@ -1,5 +1,5 @@
 import Ember from 'ember';
-
+/*
 let rentals = [{
   id: 1,
   title: 'Grand Old Mansion',
@@ -25,7 +25,7 @@ let rentals = [{
   bedrooms: 3,
   image: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg'
 }];
-
+*/
 export default Ember.Route.extend({
     model() {
     //return rentals;
