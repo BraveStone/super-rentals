@@ -1,0 +1,31 @@
+<!--  app/templates/articles.hbs  -->
+
+<div class="col-md-6 col-xs-6">
+
+    <ul>
+        <!-- 输入的值会动态更新到controller  -->
+        输入分类：{{input value=category placeholder ='查询的分类'}}
+    </ul>
+
+    <ul>
+        <!-- 关键点：这里使用的是filteredArticles而不是从route获取的model -->
+      {{#each filteredArticles as |item|}}
+          <li>
+            {{#link-to 'articles.article' item}} {{item.title}}--{{item.category}} {{/link-to}}
+          </li>
+      {{/each}}
+    </ul>
+
+</div>
+
+<ul>
+  {{#link-to 'articles' (query-params category='java')}} java {{/link-to}}
+    <br>
+  {{#link-to 'articles' (query-params category='php')}} php {{/link-to}}
+    <br>
+  {{#link-to 'articles' (query-params category='')}} all {{/link-to}}
+</ul>
+
+<div class="col-md-8 col-xs-8">
+  {{outlet}}
+</div>
